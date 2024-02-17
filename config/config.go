@@ -15,9 +15,16 @@ var (
 )
 
 func init() {
-	err := godotenv.Load()
-	if err != nil {
-		panic("Failed to load .env file")
+	// err := godotenv.Load()
+	// if err != nil {
+	// 	panic("Failed to load .env file")
+	// }
+	if os.Getenv("RAILWAY") == "" {
+		// Jika tidak di Railway, maka muat file .env
+		err := godotenv.Load()
+		if err != nil {
+			panic("Failed to load .env file")
+		}
 	}
 	SecretKey = []byte(os.Getenv("SECRET_KEY"))
 }
