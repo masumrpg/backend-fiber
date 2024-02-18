@@ -41,7 +41,7 @@ func main() {
 	if os.Getenv("RAILWAY_APP_PORT") == "443" {
 		port = "" // Port default HTTPS tidak perlu disertakan dalam alamat
 	} else {
-		port = ":8080" // Port default HTTP
+		port = ":3000" // Port default HTTP
 	}
 
 	// Mulai aplikasi di alamat yang ditentukan
